@@ -1,4 +1,5 @@
-=softprop=
+softprop
+========
 
 A poorly named script to match a dumbly named repo for some level of config
 syncrhonization. Check this out anywhere and run the softprop.sh script, and as
