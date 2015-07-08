@@ -54,7 +54,11 @@ command Wq :execute ':W' | :q
 ca w!! W
 ca x!! Wq
 
+" markdown beautification
 au BufRead,BufNewFile *.md set filetype=markdown
+
+" map F2 to show/hide whitespace. maybe a better key in the future
+nnoremap <F2> :<C-U>setlocal lcs=tab:>-,trail:-,eol:$ list! list? <CR>
 
 " pathogen crap
 call pathogen#infect()
@@ -67,10 +71,8 @@ fun! JumpToDef()
     exe "norm! \<C-]>"
   endif
 endf
-" Jump to tag
 nn <M-g> :call JumpToDef()<cr>
 ino <M-g> <esc>:call JumpToDef()<cr>i
-" end Nim crap
 
 " Syntastic crap
 let g:syntastic_cpp_compiler_options = ' -std=c++11'
