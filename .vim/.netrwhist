@@ -1,0 +1,5 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_1='/home/sean/Documents/grad/research/masters/code/client'
+let g:netrw_dirhist_2='/home/sean/Documents/grad/research/software/modular-boost/.git'
+let g:netrw_dirhist_3='/home/sean/Documents/grad/research/software/modular-boost/boost'
