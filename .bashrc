@@ -7,15 +7,6 @@ case $- in
       *) return;;
 esac
 
-# alias tmux to use 256 colors
-alias tmux="tmux -2"
-
-# TMUX
-if which tmux 2>&1 >/dev/null; then
-    #if not inside a tmux session, and if no session is started, start a new session
-    test -z "$TMUX" && (tmux attach && tmux new-window || tmux new-session -s "frolic")
-fi
-
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
 HISTSIZE=
 HISTFILESIZE=1048576
@@ -23,10 +14,6 @@ HISTFILESIZE=1048576
 # check the window size after each command and, if necessary, update the values
 # of LINES and COLUMNS.
 shopt -s checkwinsize
-
-# If set, the pattern "**" used in a pathname expansion context will match all
-# files and zero or more directories and subdirectories.
-shopt -s globstar
 
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"

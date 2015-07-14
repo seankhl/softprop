@@ -1,3 +1,4 @@
+#TODO: github stuff
 
 # get our current dir. do not muck with repo structure
 FAKEHOME="`pwd`"
@@ -16,8 +17,15 @@ ln -s $FAKEHOME/.tmux.conf $HOME/.tmux.conf
 
 # vim stuff
 ln -s $FAKEHOME/.vimrc $HOME/.vimrc
-find -path './[^.]*' -prune -type d -print0 | while read folder; do \
-    ln -s $FAKEHOME/$folder .vim $HOME/.vim/$folder
+
+# only copy individual .vim folders... there are some history settings that
+# shouldn't get mucked with
+mkdir -p $HOME/.vim
+find $FAKEHOME/.vim/* -prune -type d | while read folder; do \
+    leaf=${folder#*softprop/*}
+    echo $leaf
+    ln -s $FAKEHOME/$leaf $HOME/$leaf
+done
 
 # xfce terminal -- only the best
 ln -s $FAKEHOME/terminalrc $HOME/.config/xfce4/terminal/terminalrc 
