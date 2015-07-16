@@ -7,11 +7,10 @@ case $- in
       *) return;;
 esac
 
-# alias tmux to use 256 colors
-alias tmux="tmux -2"
-
 # TMUX
-if which tmux 2>&1 >/dev/null; then
+if which tmux >/dev/null 2>&1; then
+    # alias tmux to use 256 colors
+    alias tmux="tmux -2"
     #if not inside a tmux session, and if no session is started, start a new session
     test -z "$TMUX" && (tmux attach && tmux new-window || tmux new-session -s "frolic")
 fi
