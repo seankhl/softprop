@@ -8,6 +8,7 @@ syntax on
 set nocompatible
 set number
 set ruler
+set laststatus=2
 
 set mouse=a
 set ttymouse=xterm2
