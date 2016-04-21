@@ -23,6 +23,9 @@ set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 
+set encoding=utf-8
+set listchars=eol:¬,tab:⇥\ ,space:·,trail:␣,extends:»,precedes:«,nbsp:·
+
 set showcmd
 set incsearch
 set hlsearch
@@ -58,9 +61,6 @@ ca x!! Wq
 " markdown beautification
 au BufRead,BufNewFile *.md set filetype=markdown
 
-" map F2 to show/hide whitespace. maybe a better key in the future
-nnoremap <F2> :<C-U>setlocal lcs=tab:>-,trail:-,eol:$ list! list? <CR>
-
 " pathogen crap
 call pathogen#infect()
 
@@ -76,5 +76,21 @@ nn <M-g> :call JumpToDef()<cr>
 ino <M-g> <esc>:call JumpToDef()<cr>i
 
 " Syntastic crap
+" recommended
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_loc_list_height = 4
+" me
+let g:syntastic_mode_map={"mode":"active", "active_filetypes": [], "passive_filetypes": ["c", "cpp", "cuda"]}
 let g:syntastic_cpp_compiler_options = ' -std=c++11'
+let g:syntastic_cpp_include_dirs = ['/usr/include/x86_64-linux-gnu/qt5/']
+let g:syntastic_cpp_remove_include_errors = 1
+let g:syntastic_cpp_check_header = 1
+let g:syntastic_cpp_cpplint_exec = 'cpplint'
+let g:syntastic_cpp_cpplint_args = '--verbose=4'
 

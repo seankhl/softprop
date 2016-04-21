@@ -49,14 +49,14 @@ hi LineNr       ctermfg=249 guifg=#9e9e9e ctermbg=232 guibg=#121212
 hi MatchParen   ctermfg=159 guifg=#dfdfdf ctermbg=68  guibg=#5f87df cterm=bold gui=bold
 " TODO
 " hi MoreMsg
-hi NonText      ctermfg=247 guifg=#9e9e9e ctermbg=233 guibg=#121212 cterm=bold gui=bold
+hi NonText      ctermfg=247 guifg=#9e9e9e ctermbg=none guibg=none cterm=none gui=none
 hi Pmenu        ctermfg=0   guifg=#000000 ctermbg=250 guibg=#bcbcbc
 hi PmenuSel     ctermfg=255 guifg=#eeeeee ctermbg=243 guibg=#767676
 hi PmenuSbar                              ctermbg=252 guibg=#d0d0d0
 hi PmenuThumb   ctermfg=243 guifg=#767676
 hi Search       ctermfg=0   guifg=#000000 ctermbg=66 guibg=#afdf5f
 hi SignColumn   ctermfg=248 guifg=#a8a8a8
-hi SpecialKey   ctermfg=77  guifg=#5fdf5f
+hi SpecialKey   ctermfg=247 guifg=#9e9e9e
 hi SpellBad     ctermfg=160 guifg=fg      ctermbg=none                cterm=underline               guisp=#df0000
 hi SpellCap     ctermfg=189 guifg=#dfdfff ctermbg=none  guibg=none      cterm=underline gui=underline
 hi SpellRare    ctermfg=168 guifg=#df5f87 ctermbg=none  guibg=none      cterm=underline gui=underline
@@ -72,9 +72,9 @@ hi Underlined   ctermfg=39  guifg=#00afff                           cterm=underl
 hi VertSplit    ctermfg=232 guifg=#3a3a3a ctermbg=232 guibg=#3a3a3a cterm=none gui=none
 " hi VIsualNOS    ctermfg=24  guifg=#005f87 ctermbg=153 guibg=#afdfff cterm=none gui=none
 " hi Visual       ctermfg=24  guifg=#005f87 ctermbg=153 guibg=#afdfff
-hi Visual       ctermfg=255 guifg=#eeeeee ctermbg=66 guibg=#875f87
+hi Visual       ctermfg=255 guifg=#eeeeee ctermbg=4 guibg=#875f87
 " hi Visual       ctermfg=255 guifg=#eeeeee ctermbg=24  guibg=#005f87
-hi VisualNOS    ctermfg=255 guifg=#eeeeee ctermbg=23  guibg=#5f5f87
+hi VisualNOS    ctermfg=255 guifg=#eeeeee ctermbg=4  guibg=#5f5f87
 hi WildMenu     ctermfg=0   guifg=#000000 ctermbg=230 guibg=#afdf87 cterm=bold gui=bold
 
 "" Syntax highlighting {{{2

@@ -6,18 +6,34 @@ case $- in
     *i*) ;;
       *) return;;
 esac
+    
+# alias tmux to use 256 colors
+alias tmux="tmux -2"
 
 # TMUX
 if which tmux >/dev/null 2>&1; then
-    # alias tmux to use 256 colors
-    alias tmux="tmux -2"
     #if not inside a tmux session, and if no session is started, start a new session
     test -z "$TMUX" && (tmux attach && tmux new-window || tmux new-session -s "frolic")
 fi
 
+# don't put duplicate lines or lines starting with space in the history.
+# See bash(1) for more options
+HISTCONTROL=erasedups
+
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
 HISTSIZE=
 HISTFILESIZE=1048576
+HISTIGNORE='?:??:???:tmux:clear:history*:rm -rf*: rm -f*:\:*:\[*'
+
+# append to the history file, don't overwrite it
+shopt -s histappend
+shopt -s cmdhist
+
+PROMPT_COMMAND="history -a;"
+
+# uniquify history (keeping newest) every time a new terminal opens.
+cat ~/.bash_history | sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//' | nl | sort -k 2  -k 1,1nr | uniq -f 1 | sort -n | cut -f 2 > ~/.unduped_history
+mv ~/.unduped_history ~/.bash_history
 
 # check the window size after each command and, if necessary, update the values
 # of LINES and COLUMNS.
@@ -84,4 +100,7 @@ fi
 
 # disable ctrl+s and ctrl+q from being dumb
 stty -ixon -ixoff
+
+BASE16_SHELL="$HOME/.config/base16-shell/base16-ocean.dark.sh"
+[[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
 
