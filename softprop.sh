@@ -48,7 +48,7 @@ find $FAKEHOME/.vim/* -prune -type d | while read folder; do \
 done
 
 # xfce terminal -- only the best
-mkdir -p $home/.config
+mkdir -p $HOME/.config
 # TODO: detect existence of xfce4
 ln -s $FAKEHOME/terminalrc $HOME/.config/xfce4/terminal/terminalrc 
 ln -s $FAKEHOME/accels.scm $HOME/.config/xfce4/terminal/accels.scm

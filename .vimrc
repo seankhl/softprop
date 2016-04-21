@@ -3,6 +3,8 @@
 "  source /etc/vim/vimrc
 "endif
 
+" added by softprop.sh script
+
 syntax on
 
 set nocompatible
@@ -24,7 +26,7 @@ set softtabstop=4
 set shiftwidth=4
 
 set encoding=utf-8
-set listchars=eol:¬,tab:⇥\ ,space:·,trail:␣,extends:»,precedes:«,nbsp:·
+set listchars=eol:¬,tab:⇥\ ,trail:␣,extends:»,precedes:«,nbsp:·
 
 set showcmd
 set incsearch
