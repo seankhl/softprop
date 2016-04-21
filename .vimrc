@@ -61,7 +61,8 @@ ca w!! W
 ca x!! Wq
 
 " markdown beautification
-au BufRead,BufNewFile *.md set filetype=markdown
+autocmd BufNewFile,BufReadPost *.md set filetype=markdown
+let g:markdown_fenced_languages = ['html', 'python', 'bash=sh']
 
 " pathogen crap
 call pathogen#infect()
